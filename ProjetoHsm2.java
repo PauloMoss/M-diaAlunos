@@ -26,7 +26,7 @@ public class ProjetoHsm2 {
 		
 		for (int k = 0; k <= NotaLista.length -1; k++)
 		{	
-			System.out.print("Digite a Nota da Lista de Exerc�cio " + k + " :");
+			System.out.print("Digite a Nota da Lista de Exercício " + k + " :");
 			NotaLista[k] = sc.nextFloat(); 
 		}
 		
@@ -37,8 +37,10 @@ public class ProjetoHsm2 {
 		
 		for (int mf = 0; mf <= media.length -1; mf++)
 		{	
-			System.out.print("A m�dia dos alunos ser�: ");
+			System.out.print("A média dos alunos será: ");
 			System.out.print(media[mf]+" ");
+			if (media[mf]>=8) System.out.println("Parabéns você foi Aprovado!.");
+			else System.out.println("Necessário fazer a prova final");
 		}
 		
 		sc.close();
