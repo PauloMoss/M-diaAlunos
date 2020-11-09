@@ -40,7 +40,9 @@ public class ProjetoHsm2 {
 			System.out.print("A média dos alunos será: ");
 			System.out.print(media[mf]+" ");
 			if (media[mf]>=8) System.out.println("Parabéns você foi Aprovado!.");
-			else System.out.println("Necessário fazer a prova final");
+			else if (media[mf]>=3) System.out.println("Necessário fazer a prova final");
+			else System.out.println("Reprovado");
+			System.out.println("\n");
 		}
 		
 		sc.close();
