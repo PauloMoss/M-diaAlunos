@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class ProjetoHsm2 {
 	public static void main(String[] args) {
 		
-Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		System.out.print("Digite a quantidade de alunos: ");
 		int x = sc.nextInt();
 		float [] NotaProva = new float [x];
@@ -37,40 +37,60 @@ Scanner sc = new Scanner(System.in);
 			media[m] = (5*NotaProva[m] + 3*NotaTrabalho[m] + 2*NotaLista[m])/10; 
 		}
 		
+		int alunosAp = 0;
+		int alunosAf = 0;
+		int alunosRp = 0;
+		
 		float cont = 0;
 		for (int mf = 0; mf <= media.length -1; mf++)
 		{	
 			System.out.print("A média do aluno "+mf+" será: ");
 			System.out.println(media[mf]+" ");
 			cont += media[mf];
-			if (media[mf]>=8) System.out.println("Parabéns você foi Aprovado!.");
-			else if (media[mf]>=5) System.out.println("Necessário fazer a Avaliação final");
-			else System.out.println("Reprovado");
+			if (media[mf]>=8) {
+				alunosAp = alunosAp + 1;
+				System.out.println("Parabéns você foi Aprovado!.");
+			}
+			else if (media[mf]>=5) {
+				alunosAf = alunosAf + 1;
+				System.out.println("Necessário fazer a Avaliação final");
+			}
+			else {
+				alunosRp = alunosRp + 1;
+				System.out.println("Reprovado");
+			
+			}
 			System.out.println("\n");
 		}
 		
 		float mgt = cont/(media.length);
-		System.out.printf("A média geral da turma será: %.2f %n ", (mgt));
+		System.out.printf("A média geral da turma é de : %.2f %n ", (mgt));
 		
 		System.out.println("\n");
 		
 		float maior = 0;
 		float menor = 10;
-		float aluno = 0;
+
 		for (int p = 0; p <= media.length -1; p++)
 		{
 			if (media[p]>=maior) {
 				maior = media[p];
-				aluno = p;
 			}
+			
 			if (media[p]<=menor) {
 				menor = media[p];
-				aluno = p;
 			}
+			
+			
 		}
-		System.out.printf("A maior média da turma será: %.2f %n ", (maior));
-		System.out.printf("A menor média da turma será: %.2f %n ", (menor));
+		System.out.printf("A maior média da turma é: %.2f %n ", (maior));
+		System.out.printf("A menor média da turma é: %.2f %n ", (menor));
 		
+		System.out.println("\n");
+		
+		System.out.println("Quantidade de alunos Aprovados : "+alunosAp);
+		System.out.println("Quantidade de alunos em Avaliação final : "+alunosAf);
+		System.out.println("Quantidade de alunos Reprovados : "+alunosRp);
 		
 		sc.close();
 	}
